@@ -1,0 +1,414 @@
+// install ibraries
+#include <Arduino.h>
+#include <U8g2lib.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#ifdef U8X8_HAVE_HW_SPI
+#include <SPI.h>
+#endif
+
+#ifdef U8X8_HAVE_HW_I2C
+#include <Wire.h>
+#endif
+
+class charArrayNonAnim
+{
+
+private:
+    /* data */
+    // 'icons8-adhd-32', 32x32px
+    const unsigned char ADHD_Logo[128] PROGMEM = {};
+
+    // 'undefined, 128x64px
+    const unsigned char ARDUINO_Logo[1024] PROGMEM = {};
+
+    // 'icons8-address-50, 50x50px
+    const unsigned char address_Location[350] PROGMEM = {};
+
+    // 'icons8-air-62, 62x62px
+    const unsigned char air_Drone[496] PROGMEM = {};
+
+    // 'icons8-aircraft-60, 60x60px
+    const unsigned char aircraft_Mechanic[482] PROGMEM = {};
+
+    // 'icons8-aircraft-64, 64x64px
+    const unsigned char ufo[512] PROGMEM = {};
+
+    // 'icons8-airplane2-64', 64x64px
+    const unsigned char transport_airplane[512] PROGMEM = {};
+
+    // 'icons8-airplane-50', 50x50px
+    const unsigned char fighter_airplane1[350] PROGMEM = {};
+
+    // 'icons8-airplane-64', 64x64px
+    const unsigned char fighter_airplane2[512] PROGMEM = {};
+
+    // 'icons8-airplane-66', 66x66px
+    const unsigned char training_airplane[594] PROGMEM = {};
+
+    // 'icons8-airplane-landing-64', 64x64px
+    const unsigned char airplane_landing[512] PROGMEM = {};
+
+    // 'icons8-amd-50', 50x50px
+    const unsigned char amd_Logo[350] PROGMEM = {};
+
+    // 'icons8-autism-50', 50x50px
+    const unsigned char autism_Logo[350] PROGMEM = {};
+
+    // 'icons8-bookmark-50', 50x50px
+    const unsigned char bookmark_Icon[350] PROGMEM = {};
+
+    // 'icons8-c++-50', 50x50px
+    const unsigned char c_plus_plus_Icon[350] PROGMEM = {};
+
+    // 'icons8-close-50', 50x50px
+    const unsigned char close_Icon[350] PROGMEM = {};
+
+    // 'icons8-codepen-50', 50x50px
+    const unsigned char codepen_Icon[350] PROGMEM = {};
+
+    // 'icons8-css3-50', 50x50px
+    const unsigned char css3_Icon[350] PROGMEM = {};
+
+    // 'icons8-docker-50', 50x50px
+    const unsigned char docker_Icon[350] PROGMEM = {};
+
+    // 'icons8-done-50', 50x50px
+    const unsigned char checkmark_OK_Icon[350] PROGMEM = {};
+
+    // 'icons8-folder-48', 48x48px
+    const unsigned char folder_Icon[288] PROGMEM = {};
+
+    // 'icons8-git-50', 50x50px
+    const unsigned char git_Icon[350] PROGMEM = {};
+
+    // 'icons8-github-50', 50x50px
+    const unsigned char github_Icon[350] PROGMEM = {};
+
+    // 'icons8-helicopter-50', 50x50px
+    const unsigned char helicopter1[350] PROGMEM = {};
+
+    // 'icons8-home-50', 50x50px
+    const unsigned char home_Icon[350] PROGMEM = {};
+
+    // 'icons8-html-5-50', 50x50px
+    const unsigned char html5_Icon[350] PROGMEM = {};
+
+    // 'icons8-idea-50', 50x50px
+    const unsigned char idea_Icon[350] PROGMEM = {};
+
+    // 'icons8-java-50', 50x50px
+    const unsigned char java_Icon[350] PROGMEM = {};
+
+    // 'icons8-javascript-50', 50x50px
+    const unsigned char javascript_Icon[350] PROGMEM = {};
+
+    // 'icons8-jenkins-50', 50x50px
+    const unsigned char jenkins_Icon[350] PROGMEM = {};
+
+    // 'icons8-jquery-50', 50x50px
+    const unsigned char jquery_Icon[350] PROGMEM = {};
+
+    // 'icons8-kubernetes-50', 50x50px
+    const unsigned char kubernetes_Icon[350] PROGMEM = {};
+
+    // 'icons8-listen-50', 50x50px
+    const unsigned char listen_Icon[350] PROGMEM = {};
+
+    // 'icons8-menu-48', 48x48px
+    const unsigned char menu_Icon[288] PROGMEM = {};
+
+    // 'icons8-military-jet-68', 68x68px
+    const unsigned char armament[612] PROGMEM = {};
+
+    // 'icons8-mysql-logo-50', 50x50px
+    const unsigned char mysql_Logo[350] PROGMEM = {};
+
+    // 'icons8-navigation-50', 50x50px
+    const unsigned char navigation_compass[350] PROGMEM = {};
+
+    // 'icons8-php-logo-50', 50x50px
+    const unsigned char php_Logo[350] PROGMEM = {};
+
+    // 'icons8-pinterest-50', 50x50px
+    const unsigned char pinterest[350] PROGMEM = {};
+
+    // 'icons8-python-50', 50x50px
+    const unsigned char python_Icon[350] PROGMEM = {};
+
+    // 'icons8-radio-waves-64', 64x64px
+    const unsigned char radio_waves[512] PROGMEM = {};
+
+    // 'icons8-raspberry-pi-50', 50x50px
+    const unsigned char raspberry_pi_Logo[350] PROGMEM = {};
+
+    // 'icons8-ruby-programming-language-50', 50x50px
+    const unsigned char ruby_programming_language[350] PROGMEM = {};
+
+    // 'icons8-services-50', 50x50px
+    const unsigned char services_Icon[350] PROGMEM = {};
+
+    // 'icons8-settings-50', 50x50px
+    const unsigned char settings_Icon[350] PROGMEM = {};
+
+    // 'icons8-shield-50', 50x50px
+    const unsigned char shield_Icon[350] PROGMEM = {};
+
+    // 'icons8-sonar-64', 64x64px
+    const unsigned char sonar[512] PROGMEM = {};
+
+    // 'icons8-sound-wave-64', 64x64px
+    const unsigned char sound_bars[512] PROGMEM = {};
+
+    // 'icons8-speech-bubble-50', 50x50px
+    const unsigned char speech_bubble[350] PROGMEM = {};
+
+    // 'icons8-sub-68', 68x68px
+    const unsigned char sub_red_october[612] PROGMEM = {};
+
+    // 'icons8-unavailable-50', 50x50px
+    const unsigned char unavailable_Icon[350] PROGMEM = {};
+
+    // 'icons8-united-nations-50', 50x50px
+    const unsigned char united_nations_Icon[350] PROGMEM = {};
+
+    // 'icons8-radar-64bw', 64x64px
+    const unsigned char radar[512] PROGMEM = {};
+
+struct Frame {
+    const unsigned char *data;
+    uint8_t width;
+    uint8_t height;
+    const String name;
+};
+
+ Frame framesInfo[53]{
+        {ADHD_Logo, 32, 32, "ADHD LOGO"},                                 //     framesInfo[0]. == {ADHD_Logo, 32, 32, "ADHD LOGO"},
+        {address_Location, 50, 50, "Address Location"},                   //     framesInfo[1]. == {address_Location, 50, 50, "Address Location"},
+        {air_Drone, 62, 62, "Air Drone"},                                 //     framesInfo[2]. == {air_Drone, 62, 62, "Air Drone"},
+        {aircraft_Mechanic, 60, 60, "Aircraft Mechanic"},                 //     framesInfo[3]. == {aircraft_Mechanic, 60, 60, "Aircraft Mechanic"},
+        {ufo, 64, 64, "UFO"},                                             //     framesInfo[4]. == {ufo, 64, 64, "UFO"},
+        {transport_airplane, 64, 64, "Transport Aircraft"},               //     framesInfo[5]. == {transport_airplane, 64, 64, "Transport Aircraft"},
+        {fighter_airplane1, 64, 64, "Fighter Aircraft #1"},               //     framesInfo[6]. == {fighter_airplane1, 64, 64, "Fighter Aircraft #1"},
+        {fighter_airplane2, 64, 64, "Fighter Aircraft #2"},               //     framesInfo[7]. == {fighter_airplane2, 64, 64, "Fighter Aircraft #2"},
+        {training_airplane, 60, 60, "Training Aircraft"},                 //     framesInfo[8]. == {training_airplane, 60, 60, "Training Aircraft"},
+        {airplane_landing, 64, 64, "Airplane Landing ICON"},              //     framesInfo[9]. == {airplane_landing, 64, 64, "Airplane Landing ICON"},
+        {amd_Logo, 50, 50, "AMD Logo"},                                   //     framesInfo[10]. == {amd_Logo, 50, 50, "AMD Logo"},
+        {autism_Logo, 50, 50, "Autism Logo"},                             //     framesInfo[11]. == {autism_Logo, 50, 50, "Autism Logo"},
+        {bookmark_Icon, 50, 50, "Bookmark ICON"},                         //     framesInfo[12]. == {bookmark_Icon, 50, 50, "Bookmark ICON"},
+        {ARDUINO_Logo, 128, 64, "Arduino Logo"},                          //     framesInfo[13]. == {ARDUINO_Logo, 128, 64, "Arduino Logo"},
+        {c_plus_plus_Icon, 50, 50, "C++ ICON"},                           //     framesInfo[14]. == {c_plus_plus_Icon, 50, 50, "C++ ICON"},
+        {close_Icon, 50, 50, "Close ICON"},                               //     framesInfo[15]. == {close_Icon, 50, 50, "Close ICON"},
+        {codepen_Icon, 50, 50, "CodePen ICON"},                           //     framesInfo[16]. == {codepen_Icon, 50, 50, "CodePen ICON"},
+        {css3_Icon, 50, 50, "CSS 3 ICON"},                                //     framesInfo[17]. == {css3_Icon, 50, 50, "CSS 3 ICON"},
+        {docker_Icon, 50, 50, "Docker ICON"},                             //     framesInfo[18]. == {docker_Icon, 50, 50, "Docker ICON"},
+        {checkmark_OK_Icon, 50, 50, "Checkmark OK ICON"},                 //     framesInfo[19]. == {checkmark_OK_Icon, 50, 50, "Checkmark OK ICON"},
+        {folder_Icon, 50, 50, "Folder ICON"},                             //     framesInfo[20]. == {folder_Icon, 50, 50, "Folder ICON"},
+        {git_Icon, 50, 50, "GIT ICON"},                                   //     framesInfo[21]. == {git_Icon, 50, 50, "GIT ICON"},
+        {github_Icon, 50, 50, "GitHub ICON"},                             //     framesInfo[22]. == {github_Icon, 50, 50, "GitHub ICON"},
+        {helicopter1, 50, 50, "Helicopter #1"},                           //     framesInfo[23]. == {helicopter1, 50, 50, "Helicopter #1"},
+        {home_Icon, 50, 50, "Home ICON"},                                 //     framesInfo[24]. == {home_Icon, 50, 50, "Home ICON"},
+        {html5_Icon, 50, 50, "HTML 5 ICON"},                              //     framesInfo[25]. == {html5_Icon, 50, 50, "HTML 5 ICON"},
+        {idea_Icon, 50, 50, "Idea ICON"},                                 //     framesInfo[26]. == {idea_Icon, 50, 50, "Idea ICON"},
+        {java_Icon, 50, 50, "Java ICON"},                                 //     framesInfo[27]. == {java_Icon, 50, 50, "Java ICON"},
+        {javascript_Icon, 50, 50, "JavaScript ICON"},                     //     framesInfo[28]. == {javascript_Icon, 50, 50, "JavaScript ICON"},
+        {jenkins_Icon, 50, 50, "Jenkins ICON"},                           //     framesInfo[29]. == {jenkins_Icon, 50, 50, "Jenkins ICON"},
+        {jquery_Icon, 50, 50, "JQuery ICON"},                             //     framesInfo[30]. == {jquery_Icon, 50, 50, "JQuery ICON"},
+        {kubernetes_Icon, 50, 50, "Kubernetes ICON"},                     //     framesInfo[31]. == {kubernetes_Icon, 50, 50, "Kubernetes ICON"},
+        {listen_Icon, 50, 50, "Listen ICON"},                             //     framesInfo[32]. == {listen_Icon, 50, 50, "Listen ICON"},
+        {menu_Icon, 48, 48, "Menu ICON"},                                 //     framesInfo[33]. == {menu_Icon, 48, 48, "Menu ICON"},
+        {armament, 68, 68, "Armament"},                                   //     framesInfo[34]. == {armament, 68, 68, "Armament"},
+        {mysql_Logo, 50, 50, "MySQL Logo"},                               //     framesInfo[35]. == {mysql_Logo, 50, 50, "MySQL Logo"},
+        {navigation_compass, 50, 50, "Navigation Compass"},               //     framesInfo[36]. == {navigation_compass, 50, 50, "Navigation Compass"},
+        {php_Logo, 50, 50, "php Logo"},                                   //     framesInfo[37]. == {php_Logo, 50, 50, "php Logo"},
+        {pinterest, 50, 50, "Pinterest"},                                 //     framesInfo[38]. == {pinterest, 50, 50, "Pinterest"},
+        {python_Icon, 50, 50, "Python ICON"},                             //     framesInfo[39]. == {python_Icon, 50, 50, "Python ICON"},
+        {radio_waves, 64, 64, "Radio Waves"},                             //     framesInfo[40]. == {radio_waves, 64, 64, "Radio Waves"},
+        {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},                 //     framesInfo[41]. == {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},
+        {ruby_programming_language, 50, 50, "Ruby Programming Language"}, //     framesInfo[42]. == {ruby_programming_language, 50, 50, "Ruby Programming Language"},
+        {services_Icon, 50, 50, "Services ICON"},                         //     framesInfo[43]. == {services_Icon, 50, 50, "Services ICON"},
+        {settings_Icon, 50, 50, "Settings ICON"},                         //     framesInfo[44]. == {settings_Icon, 50, 50, "Settings ICON"},
+        {shield_Icon, 50, 50, "Shield ICON"},                             //     framesInfo[45]. == {shield_Icon, 50, 50, "Shield ICON"},
+        {sonar, 50, 50, "Sonar"},                                         //     framesInfo[46]. == {sonar, 50, 50, "Sonar"},
+        {sound_bars, 50, 50, "Sound Bars"},                               //     framesInfo[47]. == {sound_bars, 50, 50, "Sound Bars"},
+        {speech_bubble, 50, 50, "Speech Bubble"},                         //     framesInfo[48]. == {speech_bubble, 50, 50, "Speech Bubble"},
+        {sub_red_october, 50, 50, "Red October Submarine"},               //     framesInfo[49]. == {sub_red_october, 50, 50, "Red October Submarine"},
+        {unavailable_Icon, 50, 50, "Unavailable Icon"},                   //     framesInfo[50]. == {unavailable_Icon, 50, 50, "Unavailable Icon"},
+        {united_nations_Icon, 50, 50, "United Nations Icon"},             //     framesInfo[51]. == {united_nations_Icon, 50, 50, "United Nations Icon"},
+        {radar, 50, 50, "Radar"},                                         //     framesInfo[52]. == {radar, 50, 50, "Radar"},
+    };
+
+    // end private data
+
+public:
+
+    // charArrayNonAnim(/* args */);
+    charArrayNonAnim(int i){
+        display.clearDisplay();
+        display.drawBitmap(0, 17, framesInfo[i].data, framesInfo[i].width, framesInfo[i].height, 1);
+        display.display();
+    }
+    // Destructor
+    // ~charArrayNonAnim();
+    ~charArrayNonAnim() {
+        Serial.println("Char Array Non-Anim completed");
+        display.clearDisplay();
+        u8g2.clearBuffer();
+    };
+
+    void ADHDLogo() { charArrayNonAnim(0); }; // end to calling the ADHD Logo function ONLY
+
+    void addressLocationIcon() { charArrayNonAnim(1); }; // end to calling the address loaction icon function ONLY
+
+    void droneIcon() { charArrayNonAnim(2); }; // end to calling the drone icon function ONLY
+
+    void aircraftMechanicIcon() { charArrayNonAnim(3); }; // end to calling the aircraft mechanic icon function ONLY
+
+    void ufoIcon() { charArrayNonAnim(4); }; // end to calling the UFO icon function ONLY
+
+    void transportaircraftIcon() { charArrayNonAnim(5); }; // end to calling the transport aircairplane landing/airport icon function ONLY
+
+    void fighteraircraft1Icon() { charArrayNonAnim(6); };  // end to calling the first fighter aircraft icon function ONLY
+
+    void fighteraircraft2Icon() { charArrayNonAnim(7); };  // end to calling the second fighter aircraft icon function ONLY
+
+    void TrainingaircraftIcon() { charArrayNonAnim(8); };  // end to calling the single rotary engine/training aircrasft icon function ONLY
+
+    void AirplaneLandingIcon() { charArrayNonAnim(9); };  // end to calling the airplane landing/airport icon function ONLY
+
+    void AMDLogo() { charArrayNonAnim(10); }; // end to calling the AMD Logo function ONLY; 
+
+    void AUTISMLogo() { charArrayNonAnim(11); }; // end to calling the Autism Logo function ONLY
+
+    void bookmarkIcon() { charArrayNonAnim(12); }; // end to calling the bookmark icon function ONLY
+
+    void ARDUINOLogo() { charArrayNonAnim(13); }; // end to calling the Arduino Logo function ONLY
+
+    void CPLUSPLUSLogo() { charArrayNonAnim(14); }; // end to calling the C++ Logo function ONLY
+
+    void closeIcon() { charArrayNonAnim(15); }; // end to calling the close icon function ONLY
+
+    void CODEPENLogo() { charArrayNonAnim(16); }; // end to calling the CodePen.io Logo function ONLY
+
+    void CSS3Logo() { charArrayNonAnim(17); }; // end to calling the CSS 3 Logo function ONLY
+
+    void DOCKERLogo() { charArrayNonAnim(18); }; // end to calling the Docker Logo function ONLY
+
+    void CheckmarkOKIcon() { charArrayNonAnim(19); }; // end to calling the checkmark OK icon function ONLY
+
+    void folderIcon() { charArrayNonAnim(20); }; // end to calling the folder icon function ONLY
+
+    void GITLogo() { charArrayNonAnim(21); }; // end to calling the Git Logo function ONLY
+
+    void GITHUBLogo() { charArrayNonAnim(22); }; // end to calling the GitHub Logo function ONLY
+
+    void helicopterIcon() { charArrayNonAnim(23); }; // end to calling the helicopter icon function ONLY
+
+    void homeIcon() { charArrayNonAnim(24); }; // end to calling the Home icon function ONLY
+
+    void HTML5Logo() { charArrayNonAnim(25); }; // end to calling the HTML 5 Logo function ONLY
+
+    void ideaIcon() { charArrayNonAnim(26); }; // end to calling the idea icon function ONLY
+
+    void JAVALogo() { charArrayNonAnim(27); }; // end to calling the Java Logo function ONLY
+
+    void JAVASCRIPTLogo() { charArrayNonAnim(28); }; // end to calling the JavaScript Logo function ONLY
+
+    void JENKINSLogo() { charArrayNonAnim(29); }; // end to calling the Jenkins Logo function ONLY
+
+    void JQUERYLogo() { charArrayNonAnim(30); }; // end to calling the JQuery Logo function ONLY
+
+    void KUBERNETESLogo() { charArrayNonAnim(31); }; // end to calling the Kubernetes Logo function ONLY
+
+    void listenIcon() { charArrayNonAnim(32); }; // end to calling the listening icon function ONLY
+
+    void menuIcon() { charArrayNonAnim(33); }; // end to calling the menu/hamburger icon function ONLY
+
+    void armamentIcon() { charArrayNonAnim(34); }; // end to calling the armament/rocket icon function ONLY
+
+    void MYSQLLogo() { charArrayNonAnim(35); }; // end to calling the MySQL Logo function ONLY
+
+    void navigationCompassIcon() { charArrayNonAnim(36); }; // end to calling the navigation/compass icon function ONLY
+
+    void PHPLogo() { charArrayNonAnim(37); }; // end to calling the php Logo function ONLY
+
+    void PINTERESTLogo() { charArrayNonAnim(38); }; // end to calling the PInterest Logo function ONLY
+
+    void PYTHONLogo() { charArrayNonAnim(39); }; // end to calling the Python Logo function ONLY
+
+    void radiowavesIcon() { charArrayNonAnim(40); }; // end to calling the Radio Waves icon function ONLY
+
+    void RASPBERRYPILogo() { charArrayNonAnim(41); }; // end to calling the RaspberryPi Logo function ONLY
+
+    void RUBYLogo() { charArrayNonAnim(42); }; // end to calling the Ruby Programming Logo function ONLY
+
+    void servicesIcon() { charArrayNonAnim(43); }; // end to calling the services/gears icon function ONLY
+
+    void settingsIcon() { charArrayNonAnim(44); }; // end to calling the settings/gear icon function ONLY
+
+    void shieldIcon() { charArrayNonAnim(45); }; // end to calling the shield icon Logo function ONLY
+
+    void sonarIcon() { charArrayNonAnim(46); }; // end to calling the sonar screen icon function ONLY
+
+    void sounbbarsIcon() { charArrayNonAnim(47); }; // end to calling the sound bars icon function ONLY
+
+    void speechbubbleIcon() { charArrayNonAnim(48); }; // end to calling the Speech Bubble icon function ONLY
+
+    void redoctobersubIcon() { charArrayNonAnim(49); }; // end to calling the red october sub icon function ONLY
+
+    void unavailableIcon() { charArrayNonAnim(50); }; // end to calling the unavailable/don't go there icon function ONLY
+
+    void UNITEDNATIONSLogo() { charArrayNonAnim(51); }; // end to calling the United Nations Logo function ONLY
+
+    void radarIcon() { charArrayNonAnim(52); }; // end to calling the black and white radar screen icon function ONLY
+
+    void smallFramechar(int i)
+    {
+        display.drawBitmap(0, 17, framesInfo[i].data, framesInfo[i].width, framesInfo[i].height, 1);
+        display.display();
+    }
+
+    void charArray_NonAnim()
+    {
+        int max = 53; // ensure the max integer == the number of arrays you have in the struct array
+        for (int i = 0; i < max; i++)
+        {
+            int effectime = 20;
+            display.clearDisplay();
+
+            while (effectime > 0)
+            {
+                bLED = !bLED;
+                digitalWrite(LED_BUILTIN, bLED);
+
+            
+                if (framesInfo[i].width <= 50 || framesInfo[i].height <= 50)
+                {
+                    u8g2.clearBuffer();
+                    u8g2.home();
+                    u8g2.setCursor(3, oled_LineH * 1 + 2);
+                    u8g2.print(framesInfo[i].name);
+                    u8g2.sendBuffer();
+                    smallFramechar(i);
+                }
+                else
+                {
+                    display.drawBitmap(0, 0, framesInfo[i].data, framesInfo[i].width, framesInfo[i].height, 1);
+                    display.display();
+                    delay(2000);
+                }
+                effectime--;
+            }
+        }
+    };
+};
+
+// charArrayNonAnim::charArrayNonAnim(/* args */)
+// {
+// }
+
+// charArrayNonAnim::~charArrayNonAnim()
+// {
+// }
+
