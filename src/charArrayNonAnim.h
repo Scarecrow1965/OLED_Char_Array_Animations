@@ -1429,75 +1429,79 @@ private:
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
+    const uint8_t height_width = 50;
+    const uint8_t totalNonAnimArray = 55;
     struct Frame
     {
         const unsigned char *data;
         uint8_t width;
         uint8_t height;
         const String name;
+        const int dataSize;
+        const String filename;
     };
 
-    Frame framesInfo[54] = {
-        {adhd_Logo, 50, 50, "ADHD Logo"}, //     framesInfo[0]. == {ADHD_Logo, 32, 32, "ADHD LOGO"},
-        // {arduino_Logo, 128, 64, "Arduino Logo"},                               //     framesInfo[1]. == {arduino_Logo, 128, 64, "Arduino Logo"},
-        {arduino_Logo2, 50, 50, "Arduino Logo"},                               //     framesInfo[1]. == {arduino_Logo2, 50, 50, "Arduino Logo"},
-        {amd_Logo, 50, 50, "AMD Logo"},                                        //     framesInfo[2]. == {amd_Logo, 50, 50, "AMD Logo"},
-        {autism_Logo, 50, 50, "Autism Logo"},                                  //     framesInfo[3]. == {autism_Logo, 50, 50, "Autism Logo"},
-        {c_plus_plus_Logo, 50, 50, "C++ Logo"},                                //     framesInfo[4]. == {c_plus_plus_Icon, 50, 50, "C++ ICON"},
-        {codepen_Logo, 50, 50, "CodePen Logo"},                                //     framesInfo[5]. == {codepen_Icon, 50, 50, "CodePen ICON"},
-        {css3_Logo, 50, 50, "CSS 3 Logo"},                                     //     framesInfo[6]. == {css3_Icon, 50, 50, "CSS 3 ICON"},
-        {docker_Logo, 50, 50, "Docker Logo"},                                  //     framesInfo[7]. == {docker_Icon, 50, 50, "Docker ICON"},
-        {git_Logo, 50, 50, "GIT Logo"},                                        //     framesInfo[8]. == {git_Icon, 50, 50, "GIT ICON"},
-        {github_Logo, 50, 50, "GitHub Logo"},                                  //     framesInfo[9]. == {github_Icon, 50, 50, "GitHub ICON"},
-        {html5_Logo, 50, 50, "HTML 5 Logo"},                                   //     framesInfo[10]. == {html5_Icon, 50, 50, "HTML 5 ICON"},
-        {java_Logo, 50, 50, "Java Logo"},                                      //     framesInfo[11]. == {java_Icon, 50, 50, "Java ICON"},
-        {javascript_Logo, 50, 50, "JavaScript Logo"},                          //     framesInfo[12]. == {javascript_Icon, 50, 50, "JavaScript ICON"},
-        {jenkins_Logo, 50, 50, "Jenkins Logo"},                                //     framesInfo[13]. == {jenkins_Icon, 50, 50, "Jenkins ICON"},
-        {jquery_Logo, 50, 50, "JQuery Logo"},                                  //     framesInfo[14]. == {jquery_Icon, 50, 50, "JQuery ICON"},
-        {kubernetes_Logo, 50, 50, "Kubernetes Logo"},                          //     framesInfo[15]. == {kubernetes_Icon, 50, 50, "Kubernetes ICON"},
-        {mysql_Logo, 50, 50, "MySQL Logo"},                                    //     framesInfo[16]. == {mysql_Logo, 50, 50, "MySQL Logo"},
-        {php_Logo, 50, 50, "php Logo"},                                        //     framesInfo[17]. == {php_Logo, 50, 50, "php Logo"},
-        {pinterest_Logo, 50, 50, "Pinterest Logo"},                            //     framesInfo[18]. == {pinterest, 50, 50, "Pinterest"},
-        {python_Logo, 50, 50, "Python Logo"},                                  //     framesInfo[19]. == {python_Icon, 50, 50, "Python ICON"},
-        {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},                      //     framesInfo[20]. == {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},
-        {ruby_programming_language_Logo, 50, 50, "Ruby Programming Language"}, //     framesInfo[21]. == {ruby_programming_language, 50, 50, "Ruby Programming Language"},
-        {united_nations_Logo, 50, 50, "United Nations Logo"},                  //     framesInfo[22]. == {united_nations_Icon, 50, 50, "United Nations Icon"},
-        {air_Drone_Icon, 50, 50, "Air Drone ICON"},                            //     framesInfo[23]. == {air_Drone, 62, 62, "Air Drone"},
-        {aircraft_Mechanic_Icon, 50, 50, "Aircraft Mechanic ICON"},            //     framesInfo[24]. == {aircraft_Mechanic, 60, 60, "Aircraft Mechanic"},
-        {transport_airplane_Icon, 50, 50, "Transport Aircraft ICON"},          //     framesInfo[25]. == {transport_airplane, 64, 64, "Transport Aircraft"},
-        {fighter_airplane1_Icon, 50, 50, "Fighter Aircraft #1 ICON"},          //     framesInfo[26]. == {fighter_airplane1, 64, 64, "Fighter Aircraft #1"},
-        {fighter_airplane2_Icon, 50, 50, "Fighter Aircraft #2 ICON"},          //     framesInfo[27]. == {fighter_airplane2, 64, 64, "Fighter Aircraft #2"},
-        {training_airplane_Icon, 50, 50, "Training Aircraft ICON"},            //     framesInfo[28]. == {training_airplane, 60, 60, "Training Aircraft"},
-        {airplane_landing_Icon, 50, 50, "Airplane Landing ICON"},              //     framesInfo[29]. == {airplane_landing, 64, 64, "Airplane Landing ICON"},
-        {helicopter1_Icon, 50, 50, "Helicopter #1 ICON"},                      //     framesInfo[30]. == {helicopter1, 50, 50, "Helicopter #1"},
-        {helicopter2_Icon, 50, 50, "Helicopter #2 ICON"},                      //     framesInfo[53]. == {helicopter2, 50, 50, "Helicopter #2"},
-        {armament_Icon, 50, 50, "Armament ICON"},                              //     framesInfo[31]. == {armament, 68, 68, "Armament"},
-        {navigation_compass_Icon, 50, 50, "Navigation Compass ICON"},          //     framesInfo[32]. == {navigation_compass, 50, 50, "Navigation Compass"},
-        {radar_Icon, 50, 50, "Radar ICON"},                                    //     framesInfo[33]. == {radar, 50, 50, "Radar"},
-        {radio_waves_Icon, 50, 50, "Radio Waves ICON"},                        //     framesInfo[34]. == {radio_waves, 64, 64, "Radio Waves"},
-        {sonar_Icon, 50, 50, "Sonar ICON"},                                    //     framesInfo[35]. == {sonar, 50, 50, "Sonar"},
-        {address_Location_Icon, 50, 50, "Address Location ICON"},              //     framesInfo[36]. == {address_Location, 50, 50, "Address Location"},
-        {bookmark_Icon, 50, 50, "Bookmark ICON"},                              //     framesInfo[37]. == {bookmark_Icon, 50, 50, "Bookmark ICON"},
-        {checkmark_Icon, 50, 50, "Checkmark OK ICON"},                         //     framesInfo[38]. == {checkmark_OK_Icon, 50, 50, "Checkmark OK ICON"},
-        {close_Icon, 50, 50, "Close ICON"},                                    //     framesInfo[39]. == {close_Icon, 50, 50, "Close ICON"},
-        {folder_Icon, 50, 50, "Folder ICON"},                                  //     framesInfo[40]. == {folder_Icon, 50, 50, "Folder ICON"},
-        {home_Icon, 50, 50, "Home ICON"},                                      //     framesInfo[41]. == {home_Icon, 50, 50, "Home ICON"},
-        {idea_Icon, 50, 50, "Idea ICON"},                                      //     framesInfo[42]. == {idea_Icon, 50, 50, "Idea ICON"},
-        {listen_Icon, 50, 50, "Listen ICON"},                                  //     framesInfo[43]. == {listen_Icon, 50, 50, "Listen ICON"},
-        {menu_Icon, 50, 50, "Menu ICON"},                                      //     framesInfo[44]. == {menu_Icon, 48, 48, "Menu ICON"},
-        {services_Icon, 50, 50, "Services ICON"},                              //     framesInfo[45]. == {services_Icon, 50, 50, "Services ICON"},
-        {settings_Icon, 50, 50, "Settings ICON"},                              //     framesInfo[46]. == {settings_Icon, 50, 50, "Settings ICON"},
-        {shield_Icon, 50, 50, "Shield ICON"},                                  //     framesInfo[47]. == {shield_Icon, 50, 50, "Shield ICON"},
-        {sound_bars_Icon, 50, 50, "Sound Bars ICON"},                          //     framesInfo[48]. == {sound_bars, 50, 50, "Sound Bars"},
-        {speech_bubble_Icon, 50, 50, "Speech Bubble ICON"},                    //     framesInfo[49]. == {speech_bubble, 50, 50, "Speech Bubble"},
-        {unavailable_Icon, 50, 50, "Unavailable ICON"},                        //     framesInfo[50]. == {unavailable_Icon, 50, 50, "Unavailable Icon"},
-        {ufo_Icon, 50, 50, "UFO ICON"},                                        //     framesInfo[51]. == {ufo, 64, 64, "UFO"},
-        {sub_red_october_Icon, 50, 50, "Red October Submarine ICON"},          //     framesInfo[52]. == {sub_red_october, 50, 50, "Red October Submarine"},
+    Frame framesInfo[55] = {
+        {adhd_Logo, height_width, height_width, "ADHD Logo", 0, "adhd_Logo.bin"},                                                            //     framesInfo[0]. == {ADHD_Logo, 50, 50, "ADHD LOGO"},
+        {arduino_Logo, 128, 64, "Arduino Logo", 0, "/arduino_Logo.bin"},                                                                     //     framesInfo[1]. == {arduino_Logo, 128, 64, "Arduino Logo"},
+        {arduino_Logo2, height_width, height_width, "Arduino Logo", 0, "/arduino_Logo2.bin"},                                                //     framesInfo[2]. == {arduino_Logo2, 50, 50, "Arduino Logo"},
+        {amd_Logo, height_width, height_width, "AMD Logo", 0, "/amd_Logo.bin"},                                                              //     framesInfo[3]. == {amd_Logo, 50, 50, "AMD Logo"},
+        {autism_Logo, height_width, height_width, "Autism Logo", 0, "/autism_Logo.bin"},                                                     //     framesInfo[4]. == {autism_Logo, 50, 50, "Autism Logo"},
+        {c_plus_plus_Logo, height_width, height_width, "C++ Logo", 0, "/c_plus_plus_Logo.bin"},                                              //     framesInfo[5]. == {c_plus_plus_Icon, 50, 50, "C++ ICON"},
+        {codepen_Logo, height_width, height_width, "CodePen Logo", 0, "/codepen_Logo.bin"},                                                  //     framesInfo[6]. == {codepen_Icon, 50, 50, "CodePen ICON"},
+        {css3_Logo, height_width, height_width, "CSS 3 Logo", 0, "/css3_Logo.bin"},                                                          //     framesInfo[7]. == {css3_Icon, 50, 50, "CSS 3 ICON"},
+        {docker_Logo, height_width, height_width, "Docker Logo", 0, "/docker_Logo.bin"},                                                     //     framesInfo[8]. == {docker_Icon, 50, 50, "Docker ICON"},
+        {git_Logo, height_width, height_width, "GIT Logo", 0, "/git_Logo.bin"},                                                              //     framesInfo[9]. == {git_Icon, 50, 50, "GIT ICON"},
+        {github_Logo, height_width, height_width, "GitHub Logo", 0, "/github_Logo.bin"},                                                     //     framesInfo[10]. == {github_Icon, 50, 50, "GitHub ICON"},
+        {html5_Logo, height_width, height_width, "HTML 5 Logo", 0, "/html5_Logo.bin"},                                                       //     framesInfo[11]. == {html5_Icon, 50, 50, "HTML 5 ICON"},
+        {java_Logo, height_width, height_width, "Java Logo", 0, "/java_Logo.bin"},                                                           //     framesInfo[12]. == {java_Icon, 50, 50, "Java ICON"},
+        {javascript_Logo, height_width, height_width, "JavaScript Logo", 0, "/javascript_Logo.bin"},                                         //     framesInfo[13]. == {javascript_Icon, 50, 50, "JavaScript ICON"},
+        {jenkins_Logo, height_width, height_width, "Jenkins Logo", 0, "/jenkins_Logo.bin"},                                                  //     framesInfo[14]. == {jenkins_Icon, 50, 50, "Jenkins ICON"},
+        {jquery_Logo, height_width, height_width, "JQuery Logo", 0, "/jquery_Logo.bin"},                                                     //     framesInfo[15]. == {jquery_Icon, 50, 50, "JQuery ICON"},
+        {kubernetes_Logo, height_width, height_width, "Kubernetes Logo", 0, "/kubernetes_Logo.bin"},                                         //     framesInfo[16]. == {kubernetes_Icon, 50, 50, "Kubernetes ICON"},
+        {mysql_Logo, height_width, height_width, "MySQL Logo", 0, "/mysql_Logo.bin"},                                                        //     framesInfo[17]. == {mysql_Logo, 50, 50, "MySQL Logo"},
+        {php_Logo, height_width, height_width, "php Logo", 0, "/php_Logo.bin"},                                                              //     framesInfo[18]. == {php_Logo, 50, 50, "php Logo"},
+        {pinterest_Logo, height_width, height_width, "Pinterest Logo", 0, "/pinterest_Logo.bin"},                                            //     framesInfo[19]. == {pinterest, 50, 50, "Pinterest"},
+        {python_Logo, height_width, height_width, "Python Logo", 0, "/python_Logo.bin"},                                                     //     framesInfo[20]. == {python_Icon, 50, 50, "Python ICON"},
+        {raspberry_pi_Logo, height_width, height_width, "Raspberry Pi Logo", 0, "/"},                                                        //     framesInfo[21]. == {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},
+        {ruby_programming_language_Logo, height_width, height_width, "Ruby Programming Language", 0, "/ruby_programming_language_Logo.bin"}, //     framesInfo[22]. == {ruby_programming_language, 50, 50, "Ruby Programming Language"},
+        {united_nations_Logo, height_width, height_width, "United Nations Logo", 0, "/united_nations_Logo.bin"},                             //     framesInfo[23]. == {united_nations_Icon, 50, 50, "United Nations Icon"},
+        {air_Drone_Icon, height_width, height_width, "Air Drone ICON", 0, "/air_Drone_Icon.bin"},                                            //     framesInfo[24]. == {air_Drone, 50, 50, "Air Drone"},
+        {aircraft_Mechanic_Icon, height_width, height_width, "Aircraft Mechanic ICON", 0, "/aircraft_Mechanic_Icon.bin"},                    //     framesInfo[25]. == {aircraft_Mechanic, 50, 50, "Aircraft Mechanic"},
+        {transport_airplane_Icon, height_width, height_width, "Transport Aircraft ICON", 0, "/transport_airplane_Icon.bin"},                 //     framesInfo[26]. == {transport_airplane, 50, 50, "Transport Aircraft"},
+        {fighter_airplane1_Icon, height_width, height_width, "Fighter Aircraft #1 ICON", 0, "/fighter_airplane1_Icon.bin"},                  //     framesInfo[27]. == {fighter_airplane1, 50, 50, "Fighter Aircraft #1"},
+        {fighter_airplane2_Icon, height_width, height_width, "Fighter Aircraft #2 ICON", 0, "/fighter_airplane2_Icon.bin"},                  //     framesInfo[28]. == {fighter_airplane2, 50, 50, "Fighter Aircraft #2"},
+        {training_airplane_Icon, height_width, height_width, "Training Aircraft ICON", 0, "/training_airplane_Icon.bin"},                    //     framesInfo[29]. == {training_airplane, 50, 50, "Training Aircraft"},
+        {airplane_landing_Icon, height_width, height_width, "Airplane Landing ICON", 0, "/airplane_landing_Icon.bin"},                       //     framesInfo[30]. == {airplane_landing, 50, 50, "Airplane Landing ICON"},
+        {helicopter1_Icon, height_width, height_width, "Helicopter #1 ICON", 0, "/helicopter1_Icon.bin"},                                    //     framesInfo[31]. == {helicopter1, 50, 50, "Helicopter #1"},
+        {helicopter2_Icon, height_width, height_width, "Helicopter #2 ICON", 0, "/helicopter2_Icon.bin"},                                    //     framesInfo[32]. == {helicopter2, 50, 50, "Helicopter #2"},
+        {armament_Icon, height_width, height_width, "Armament ICON", 0, "/armament_Icon.bin"},                                               //     framesInfo[33]. == {armament, 50, 50, "Armament"},
+        {navigation_compass_Icon, height_width, height_width, "Navigation Compass ICON", 0, "/navigation_compass_Icon.bin"},                 //     framesInfo[34]. == {navigation_compass, 50, 50, "Navigation Compass"},
+        {radar_Icon, height_width, height_width, "Radar ICON", 0, "/radar_Icon.bin"},                                                        //     framesInfo[35]. == {radar, 50, 50, "Radar"},
+        {radio_waves_Icon, height_width, height_width, "Radio Waves ICON", 0, "/radio_waves_Icon.bin"},                                      //     framesInfo[36]. == {radio_waves, 50, 50, "Radio Waves"},
+        {sonar_Icon, height_width, height_width, "Sonar ICON", 0, "/sonar_Icon.bin"},                                                        //     framesInfo[37]. == {sonar, 50, 50, "Sonar"},
+        {address_Location_Icon, height_width, height_width, "Address Location ICON", 0, "/address_Location_Icon.bin"},                       //     framesInfo[38]. == {address_Location, 50, 50, "Address Location"},
+        {bookmark_Icon, height_width, height_width, "Bookmark ICON", 0, "/bookmark_Icon.bin "},                                              //     framesInfo[39]. == {bookmark_Icon, 50, 50, "Bookmark ICON"},
+        {checkmark_Icon, height_width, height_width, "Checkmark OK ICON", 0, "/checkmark_Icon.bin"},                                         //     framesInfo[40]. == {checkmark_OK_Icon, 50, 50, "Checkmark OK ICON"},
+        {close_Icon, height_width, height_width, "Close ICON", 0, "/close_Icon.bin"},                                                        //     framesInfo[41]. == {close_Icon, 50, 50, "Close ICON"},
+        {folder_Icon, height_width, height_width, "Folder ICON", 0, "/folder_Icon.bin"},                                                     //     framesInfo[42]. == {folder_Icon, 50, 50, "Folder ICON"},
+        {home_Icon, height_width, height_width, "Home ICON", 0, "/home_Icon.bin"},                                                           //     framesInfo[43]. == {home_Icon, 50, 50, "Home ICON"},
+        {idea_Icon, height_width, height_width, "Idea ICON", 0, "/idea_Icon.bin"},                                                           //     framesInfo[44]. == {idea_Icon, 50, 50, "Idea ICON"},
+        {listen_Icon, height_width, height_width, "Listen ICON", 0, "/listen_Icon.bin"},                                                     //     framesInfo[45]. == {listen_Icon, 50, 50, "Listen ICON"},
+        {menu_Icon, height_width, height_width, "Menu ICON", 0, "/menu_Icon.bin"},                                                           //     framesInfo[46]. == {menu_Icon, 50, 50, "Menu ICON"},
+        {services_Icon, height_width, height_width, "Services ICON", 0, "/services_Icon.bin"},                                               //     framesInfo[47]. == {services_Icon, 50, 50, "Services ICON"},
+        {settings_Icon, height_width, height_width, "Settings ICON", 0, "/settings_Icon.bin"},                                               //     framesInfo[48]. == {settings_Icon, 50, 50, "Settings ICON"},
+        {shield_Icon, height_width, height_width, "Shield ICON", 0, "/shield_Icon.bin"},                                                     //     framesInfo[49]. == {shield_Icon, 50, 50, "Shield ICON"},
+        {sound_bars_Icon, height_width, height_width, "Sound Bars ICON", 0, "/sound_bars_Icon.bin"},                                         //     framesInfo[50]. == {sound_bars, 50, 50, "Sound Bars"},
+        {speech_bubble_Icon, height_width, height_width, "Speech Bubble ICON", 0, "/speech_bubble_Icon.bin"},                                //     framesInfo[51]. == {speech_bubble, 50, 50, "Speech Bubble"},
+        {unavailable_Icon, height_width, height_width, "Unavailable ICON", 0, "/unavailable_Icon.bin"},                                      //     framesInfo[52]. == {unavailable_Icon, 50, 50, "Unavailable Icon"},
+        {ufo_Icon, height_width, height_width, "UFO ICON", 0, "/ufo_Icon.bin"},                                                              //     framesInfo[53]. == {ufo, 50, 50, "UFO"},
+        {sub_red_october_Icon, height_width, height_width, "Red October Submarine ICON", 0, "/sub_red_october_Icon.bin"},                    //     framesInfo[54]. == {sub_red_october, 50, 50, "Red October Submarine"},
     };
     // end private data
 
 public:
-        // charArrayNonAnim(/* args */);
+    // charArrayNonAnim(/* args */);
     charArrayNonAnim() // Constructor function but not in class
     {
         Serial.println("Char Array Non-Anim Constructor started");
@@ -1532,275 +1536,390 @@ public:
     // LOGOS FIRST
     void ADHDLogo()
     {
+        // {adhd_Logo, height_width, height_width, "ADHD Logo", 0, "adhd_Logo.bin"},
+        //     framesInfo[0]. == {ADHD_Logo, 50, 50, "ADHD LOGO"},
         charArrayNon_Anim(0);
     }; // end to calling the ADHD Logo function ONLY
 
     void ARDUINOLogo()
     {
+        // {arduino_Logo, 128, 64, "Arduino Logo", 0, "/arduino_Logo.bin"},
+        //     framesInfo[1]. == {arduino_Logo, 128, 64, "Arduino Logo"},
         charArrayNon_Anim(1);
+    }; // end to calling the Arduino Logo function ONLY
+
+    void ARDUINOLogo2()
+    {
+        // {arduino_Logo2, height_width, height_width, "Arduino Logo", 0, "/arduino_Logo2.bin"},
+        //     framesInfo[2]. == {arduino_Logo2, 50, 50, "Arduino Logo"},
+        charArrayNon_Anim(2);
     }; // end to calling the Arduino Logo function ONLY
 
     void AMDLogo()
     {
-        charArrayNon_Anim(2);
+        // {amd_Logo, height_width, height_width, "AMD Logo", 0, "/amd_Logo.bin"},
+        //     framesInfo[3]. == {amd_Logo, 50, 50, "AMD Logo"},
+        charArrayNon_Anim(3);
     }; // end to calling the AMD Logo function ONLY;
 
     void AUTISMLogo()
     {
-        charArrayNon_Anim(3);
+        // {autism_Logo, height_width, height_width, "Autism Logo", 0, "/autism_Logo.bin"},
+        //     framesInfo[4]. == {autism_Logo, 50, 50, "Autism Logo"},
+        charArrayNon_Anim(4);
     }; // end to calling the Autism Logo function ONLY
 
     void CPLUSPLUSLogo()
     {
-        charArrayNon_Anim(4);
+        // {c_plus_plus_Logo, height_width, height_width, "C++ Logo", 0, "/c_plus_plus_Logo.bin"},
+        //     framesInfo[5]. == {c_plus_plus_Icon, 50, 50, "C++ ICON"},
+        charArrayNon_Anim(5);
     }; // end to calling the C++ Logo function ONLY
 
     void CODEPENLogo()
     {
-        charArrayNon_Anim(5);
+        // {codepen_Logo, height_width, height_width, "CodePen Logo", 0, "/codepen_Logo.bin"},
+        //     framesInfo[6]. == {codepen_Icon, 50, 50, "CodePen ICON"},
+        charArrayNon_Anim(6);
     }; // end to calling the CodePen.io Logo function ONLY
 
     void CSS3Logo()
     {
-        charArrayNon_Anim(6);
+        // {css3_Logo, height_width, height_width, "CSS 3 Logo", 0, "/css3_Logo.bin"},
+        //     framesInfo[7]. == {css3_Icon, 50, 50, "CSS 3 ICON"},
+        charArrayNon_Anim(7);
     }; // end to calling the CSS 3 Logo function ONLY
 
     void DOCKERLogo()
     {
-        charArrayNon_Anim(7);
+        // {docker_Logo, height_width, height_width, "Docker Logo", 0, "/docker_Logo.bin"},
+        //     framesInfo[8]. == {docker_Icon, 50, 50, "Docker ICON"},
+        charArrayNon_Anim(8);
     }; // end to calling the Docker Logo function ONLY
 
     void GITLogo()
     {
-        charArrayNon_Anim(8);
+        // {git_Logo, height_width, height_width, "GIT Logo", 0, "/git_Logo.bin"},
+        //     framesInfo[9]. == {git_Icon, 50, 50, "GIT ICON"},
+        charArrayNon_Anim(9);
     }; // end to calling the Git Logo function ONLY
 
     void GITHUBLogo()
     {
-        charArrayNon_Anim(9);
+        // {github_Logo, height_width, height_width, "GitHub Logo", 0, "/github_Logo.bin"},
+        //     framesInfo[10]. == {github_Icon, 50, 50, "GitHub ICON"},
+        charArrayNon_Anim(10);
     }; // end to calling the GitHub Logo function ONLY
 
     void HTML5Logo()
     {
-        charArrayNon_Anim(10);
+        // {html5_Logo, height_width, height_width, "HTML 5 Logo", 0, "/html5_Logo.bin"},
+        //     framesInfo[11]. == {html5_Icon, 50, 50, "HTML 5 ICON"},
+        charArrayNon_Anim(11);
     }; // end to calling the HTML 5 Logo function ONLY
 
     void JAVALogo()
     {
-        charArrayNon_Anim(11);
+        // {java_Logo, height_width, height_width, "Java Logo", 0, "/java_Logo.bin"},
+        //     framesInfo[12]. == {java_Icon, 50, 50, "Java ICON"},
+        charArrayNon_Anim(12);
     }; // end to calling the Java Logo function ONLY
 
     void JAVASCRIPTLogo()
     {
-        charArrayNon_Anim(12);
+        // {javascript_Logo, height_width, height_width, "JavaScript Logo", 0, "/javascript_Logo.bin"},
+        //     framesInfo[13]. == {javascript_Icon, 50, 50, "JavaScript ICON"},
+        charArrayNon_Anim(13);
     }; // end to calling the JavaScript Logo function ONLY
 
     void JENKINSLogo()
     {
-        charArrayNon_Anim(13);
+        // {jenkins_Logo, height_width, height_width, "Jenkins Logo", 0, "/jenkins_Logo.bin"},
+        //     framesInfo[14]. == {jenkins_Icon, 50, 50, "Jenkins ICON"},
+        charArrayNon_Anim(14);
     }; // end to calling the Jenkins Logo function ONLY
 
     void JQUERYLogo()
     {
-        charArrayNon_Anim(14);
+        // {jquery_Logo, height_width, height_width, "JQuery Logo", 0, "/jquery_Logo.bin"},
+        //     framesInfo[15]. == {jquery_Icon, 50, 50, "JQuery ICON"},
+        charArrayNon_Anim(15);
     }; // end to calling the JQuery Logo function ONLY
 
     void KUBERNETESLogo()
     {
-        charArrayNon_Anim(15);
+        // {kubernetes_Logo, height_width, height_width, "Kubernetes Logo", 0, "/kubernetes_Logo.bin"},
+        //     framesInfo[16]. == {kubernetes_Icon, 50, 50, "Kubernetes ICON"},
+        charArrayNon_Anim(16);
     }; // end to calling the Kubernetes Logo function ONLY
 
     void MYSQLLogo()
     {
-        charArrayNon_Anim(16);
+        // {mysql_Logo, height_width, height_width, "MySQL Logo", 0, "/mysql_Logo.bin"},
+        //     framesInfo[17]. == {mysql_Logo, 50, 50, "MySQL Logo"},
+        charArrayNon_Anim(17);
     }; // end to calling the MySQL Logo function ONLY
 
     void PHPLogo()
     {
-        charArrayNon_Anim(17);
+        // {php_Logo, height_width, height_width, "php Logo", 0, "/php_Logo.bin"},
+        //     framesInfo[18]. == {php_Logo, 50, 50, "php Logo"},
+        charArrayNon_Anim(18);
     }; // end to calling the php Logo function ONLY
 
     void PINTERESTLogo()
     {
-        charArrayNon_Anim(18);
+        // {pinterest_Logo, height_width, height_width, "Pinterest Logo", 0, "/pinterest_Logo.bin"},
+        //     framesInfo[19]. == {pinterest, 50, 50, "Pinterest"},
+        charArrayNon_Anim(19);
     }; // end to calling the PInterest Logo function ONLY
 
     void PYTHONLogo()
     {
-        charArrayNon_Anim(19);
+        // {python_Logo, height_width, height_width, "Python Logo", 0, "/python_Logo.bin"},
+        //     framesInfo[20]. == {python_Icon, 50, 50, "Python ICON"},
+        charArrayNon_Anim(20);
     }; // end to calling the Python Logo function ONLY
 
     void RASPBERRYPILogo()
     {
-        charArrayNon_Anim(20);
+        // {raspberry_pi_Logo, height_width, height_width, "Raspberry Pi Logo", 0, "/"},
+        //     framesInfo[21]. == {raspberry_pi_Logo, 50, 50, "Raspberry Pi Logo"},
+        charArrayNon_Anim(21);
     }; // end to calling the RaspberryPi Logo function ONLY
 
     void RUBYLogo()
     {
-        charArrayNon_Anim(21);
+        // {ruby_programming_language_Logo, height_width, height_width, "Ruby Programming Language", 0, "/ruby_programming_language_Logo.bin"},
+        //     framesInfo[22]. == {ruby_programming_language, 50, 50, "Ruby Programming Language"},
+        charArrayNon_Anim(22);
     }; // end to calling the Ruby Programming Logo function ONLY
 
     void UNITEDNATIONSLogo()
     {
-        charArrayNon_Anim(22);
+        // {united_nations_Logo, height_width, height_width, "United Nations Logo", 0, "/united_nations_Logo.bin"},
+        //     framesInfo[23]. == {united_nations_Icon, 50, 50, "United Nations Icon"},
+        charArrayNon_Anim(23);
     }; // end to calling the United Nations Logo function ONLY
 
     // AIRCRAFT RELATED NEXT
     void droneIcon()
     {
-        charArrayNon_Anim(23);
+        // {air_Drone_Icon, height_width, height_width, "Air Drone ICON", 0, "/air_Drone_Icon.bin"},
+        //     framesInfo[24]. == {air_Drone, 50, 50, "Air Drone"},
+        charArrayNon_Anim(24);
     }; // end to calling the drone icon function ONLY
 
     void aircraftMechanicIcon()
     {
-          charArrayNon_Anim(24);
+        // {aircraft_Mechanic_Icon, height_width, height_width, "Aircraft Mechanic ICON", 0, "/aircraft_Mechanic_Icon.bin"},
+        //     framesInfo[25]. == {aircraft_Mechanic, 50, 50, "Aircraft Mechanic"},
+        charArrayNon_Anim(25);
     }; // end to calling the aircraft mechanic icon function ONLY
 
     void transportaircraftIcon()
     {
-        charArrayNon_Anim(25);
+        // {transport_airplane_Icon, height_width, height_width, "Transport Aircraft ICON", 0, "/transport_airplane_Icon.bin"},
+        //     framesInfo[26]. == {transport_airplane, 50, 50, "Transport Aircraft"},
+        charArrayNon_Anim(26);
     }; // end to calling the transport aircairplane landing/airport icon function ONLY
 
     void fighteraircraft1Icon()
     {
-        charArrayNon_Anim(26);
+        // {fighter_airplane1_Icon, height_width, height_width, "Fighter Aircraft #1 ICON", 0, "/fighter_airplane1_Icon.bin"},
+        //     framesInfo[27]. == {fighter_airplane1, 50, 50, "Fighter Aircraft #1"},
+        charArrayNon_Anim(27);
     }; // end to calling the first fighter aircraft icon function ONLY
 
     void fighteraircraft2Icon()
     {
-        charArrayNon_Anim(27);
+        // {fighter_airplane2_Icon, height_width, height_width, "Fighter Aircraft #2 ICON", 0, "/fighter_airplane2_Icon.bin"},
+        //     framesInfo[28]. == {fighter_airplane2, 50, 50, "Fighter Aircraft #2"},
+        charArrayNon_Anim(28);
     }; // end to calling the second fighter aircraft icon function ONLY
 
     void TrainingaircraftIcon()
     {
-        charArrayNon_Anim(28);
+        // {training_airplane_Icon, height_width, height_width, "Training Aircraft ICON", 0, "/training_airplane_Icon.bin"},
+        //     framesInfo[29]. == {training_airplane, 50, 50, "Training Aircraft"},
+        charArrayNon_Anim(29);
     }; // end to calling the single rotary engine/training aircrasft icon function ONLY
 
     void AirplaneLandingIcon()
     {
-        charArrayNon_Anim(29);
+        // {airplane_landing_Icon, height_width, height_width, "Airplane Landing ICON", 0, "/airplane_landing_Icon.bin"},
+        //     framesInfo[30]. == {airplane_landing, 50, 50, "Airplane Landing ICON"},
+        charArrayNon_Anim(30);
     }; // end to calling the airplane landing/airport icon function ONLY
 
     void helicopterIcon1()
     {
-        charArrayNon_Anim(30);
+        // {helicopter1_Icon, height_width, height_width, "Helicopter #1 ICON", 0, "/helicopter1_Icon.bin"},
+        //     framesInfo[31]. == {helicopter1, 50, 50, "Helicopter #1"},
+        charArrayNon_Anim(31);
     }; // end to calling the helicopter icon function ONLY
 
     void helicopterIcon2()
     {
-        charArrayNon_Anim(53);
+        // {helicopter2_Icon, height_width, height_width, "Helicopter #2 ICON", 0, "/helicopter2_Icon.bin"},
+        //     framesInfo[32]. == {helicopter2, 50, 50, "Helicopter #2"},
+        charArrayNon_Anim(32);
     }; // end to calling the helicopter icon function ONLY
 
     void armamentIcon()
     {
-        charArrayNon_Anim(31);
+        // {armament_Icon, height_width, height_width, "Armament ICON", 0, "/armament_Icon.bin"},
+        //     framesInfo[33]. == {armament, 50, 50, "Armament"},
+        charArrayNon_Anim(33);
     }; // end to calling the armament/rocket icon function ONLY
 
     void navigationCompassIcon()
     {
-        charArrayNon_Anim(32);
+        // {navigation_compass_Icon, height_width, height_width, "Navigation Compass ICON", 0, "/navigation_compass_Icon.bin"},
+        //     framesInfo[34]. == {navigation_compass, 50, 50, "Navigation Compass"},
+        charArrayNon_Anim(34);
     }; // end to calling the navigation/compass icon function ONLY
 
     void radarIcon()
     {
-        charArrayNon_Anim(33);
+        // {radar_Icon, height_width, height_width, "Radar ICON", 0, "/radar_Icon.bin"},
+        //     framesInfo[35]. == {radar, 50, 50, "Radar"},
+        charArrayNon_Anim(35);
     }; // end to calling the black and white radar screen icon function ONLY
 
     void radiowavesIcon()
     {
-        charArrayNon_Anim(34);
+        // {radio_waves_Icon, height_width, height_width, "Radio Waves ICON", 0, "/radio_waves_Icon.bin"},
+        //     framesInfo[36]. == {radio_waves, 50, 50, "Radio Waves"},
+        charArrayNon_Anim(36);
     }; // end to calling the Radio Waves icon function ONLY
 
     void sonarIcon()
     {
-        charArrayNon_Anim(35);
+        // {sonar_Icon, height_width, height_width, "Sonar ICON", 0, "/sonar_Icon.bin"},
+        //     framesInfo[37]. == {sonar, 50, 50, "Sonar"},
+        charArrayNon_Anim(37);
     }; // end to calling the sonar screen icon function ONLY
 
     // OS RELATED NEXT
     void addressLocationIcon()
     {
-        charArrayNon_Anim(36);
+        // {address_Location_Icon, height_width, height_width, "Address Location ICON", 0, "/address_Location_Icon.bin"},
+        //     framesInfo[38]. == {address_Location, 50, 50, "Address Location"},
+        charArrayNon_Anim(38);
     }; // end to calling the address loaction icon function ONLY
 
     void bookmarkIcon()
     {
-        charArrayNon_Anim(37);
+        // {bookmark_Icon, height_width, height_width, "Bookmark ICON", 0, "/bookmark_Icon.bin "},
+        //     framesInfo[39]. == {bookmark_Icon, 50, 50, "Bookmark ICON"},
+        charArrayNon_Anim(39);
     }; // end to calling the bookmark icon function ONLY
 
     void CheckmarkOKIcon()
     {
-        charArrayNon_Anim(38);
+        // {checkmark_Icon, height_width, height_width, "Checkmark OK ICON", 0, "/checkmark_Icon.bin"},
+        //     framesInfo[40]. == {checkmark_OK_Icon, 50, 50, "Checkmark OK ICON"},
+        charArrayNon_Anim(40);
     }; // end to calling the checkmark OK icon function ONLY
 
     void closeIcon()
     {
-        charArrayNon_Anim(39);
+        // {close_Icon, height_width, height_width, "Close ICON", 0, "/close_Icon.bin"},
+        //     framesInfo[41]. == {close_Icon, 50, 50, "Close ICON"},
+        charArrayNon_Anim(41);
     }; // end to calling the close icon function ONLY
 
     void folderIcon()
     {
-        charArrayNon_Anim(40);
+        // {folder_Icon, height_width, height_width, "Folder ICON", 0, "/folder_Icon.bin"},
+        //     framesInfo[42]. == {folder_Icon, 50, 50, "Folder ICON"},
+        charArrayNon_Anim(42);
     }; // end to calling the folder icon function ONLY
 
     void homeIcon()
     {
-        charArrayNon_Anim(41);
+        // {home_Icon, height_width, height_width, "Home ICON", 0, "/home_Icon.bin"},
+        //     framesInfo[43]. == {home_Icon, 50, 50, "Home ICON"},
+        charArrayNon_Anim(43);
     }; // end to calling the Home icon function ONLY
 
     void ideaIcon()
     {
-        charArrayNon_Anim(42);
+        // {idea_Icon, height_width, height_width, "Idea ICON", 0, "/idea_Icon.bin"},
+        //     framesInfo[44]. == {idea_Icon, 50, 50, "Idea ICON"},
+        charArrayNon_Anim(44);
     }; // end to calling the idea icon function ONLY
 
     void listenIcon()
     {
-        charArrayNon_Anim(43);
+        // {listen_Icon, height_width, height_width, "Listen ICON", 0, "/listen_Icon.bin"},
+        //     framesInfo[45]. == {listen_Icon, 50, 50, "Listen ICON"},
+        charArrayNon_Anim(45);
     }; // end to calling the listening icon function ONLY
 
     void menuIcon()
     {
-        charArrayNon_Anim(44);
+        // {menu_Icon, height_width, height_width, "Menu ICON", 0, "/menu_Icon.bin"},
+        //     framesInfo[46]. == {menu_Icon, 50, 50, "Menu ICON"},
+        charArrayNon_Anim(46);
     }; // end to calling the menu/hamburger icon function ONLY
 
     void servicesIcon()
     {
-        charArrayNon_Anim(45);
+        // {services_Icon, height_width, height_width, "Services ICON", 0, "/services_Icon.bin"},
+        //     framesInfo[47]. == {services_Icon, 50, 50, "Services ICON"},
+        charArrayNon_Anim(47);
     }; // end to calling the services/gears icon function ONLY
 
     void settingsIcon()
     {
-        charArrayNon_Anim(46);
+        // {settings_Icon, height_width, height_width, "Settings ICON", 0, "/settings_Icon.bin"},
+        //     framesInfo[48]. == {settings_Icon, 50, 50, "Settings ICON"},
+        charArrayNon_Anim(48);
     }; // end to calling the settings/gear icon function ONLY
 
     void shieldIcon()
     {
-        charArrayNon_Anim(47);
+        // {shield_Icon, height_width, height_width, "Shield ICON", 0, "/shield_Icon.bin"},
+        //     framesInfo[49]. == {shield_Icon, 50, 50, "Shield ICON"},
+        charArrayNon_Anim(49);
     }; // end to calling the shield icon Logo function ONLY
 
     void sounbbarsIcon()
     {
-        charArrayNon_Anim(48);
+        // {sound_bars_Icon, height_width, height_width, "Sound Bars ICON", 0, "/sound_bars_Icon.bin"},
+        //     framesInfo[50]. == {sound_bars, 50, 50, "Sound Bars"},
+        charArrayNon_Anim(50);
     }; // end to calling the sound bars icon function ONLY
 
     void speechbubbleIcon()
     {
-        charArrayNon_Anim(49);
+        // {speech_bubble_Icon, height_width, height_width, "Speech Bubble ICON", 0, "/speech_bubble_Icon.bin"},
+        //     framesInfo[51]. == {speech_bubble, 50, 50, "Speech Bubble"},
+        charArrayNon_Anim(51);
     }; // end to calling the Speech Bubble icon function ONLY
 
     void unavailableIcon()
     {
-        charArrayNon_Anim(50);
+        // {unavailable_Icon, height_width, height_width, "Unavailable ICON", 0, "/unavailable_Icon.bin"},
+        //     framesInfo[52]. == {unavailable_Icon, 50, 50, "Unavailable Icon"},
+        charArrayNon_Anim(52);
     }; // end to calling the unavailable/don't go there icon function ONLY
-
-    void redoctobersubIcon()
-    {
-        charArrayNon_Anim(51);
-    }; // end to calling the red october sub icon function ONLY
 
     void ufoIcon()
     {
-        charArrayNon_Anim(52);
+        // {ufo_Icon, height_width, height_width, "UFO ICON", 0, "/ufo_Icon.bin"},
+        //     framesInfo[53]. == {ufo, 50, 50, "UFO"},
+        charArrayNon_Anim(53);
     }; // end to calling the UFO icon function ONLY
+
+    void redoctobersubIcon()
+    {
+        // {sub_red_october_Icon, height_width, height_width, "Red October Submarine ICON", 0, "/sub_red_october_Icon.bin"},
+        //     framesInfo[54]. == {sub_red_october, 50, 50, "Red October Submarine"},
+        charArrayNon_Anim(54);
+    }; // end to calling the red october sub icon function ONLY
 
     void smallFramechar(int i)
     {
