@@ -1,2 +1,0 @@
-J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/OLED_Char_Array_Animations/build/CMakeFiles/edit_cache.dir
-J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/OLED_Char_Array_Animations/build/CMakeFiles/rebuild_cache.dir

@@ -2,22 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "CMAKE_ADDR2LINE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/addr2line.exe"
-		},
-		{
 			"name" : "CMAKE_AR",
 			"properties" : 
 			[
@@ -31,19 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ar.exe"
-		},
-		{
-			"name" : "CMAKE_BUILD_TYPE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "STRING",
-			"value" : "Debug"
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -55,7 +27,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "j:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/OLED_Char_Array_Animations/build"
+			"value" : "c:/Users/steph/OneDrive/Documents/GitHub/OLED_Char_Array_Animations/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -79,7 +51,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "26"
+			"value" : "28"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +63,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "3"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -103,7 +75,19 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/steph/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/bin/cmake.exe"
+			"value" : "C:/Program Files/CMake/bin/cmake.exe"
+		},
+		{
+			"name" : "CMAKE_CONFIGURATION_TYPES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Semicolon separated list of supported configuration types, only supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything else will be ignored."
+				}
+			],
+			"type" : "STRING",
+			"value" : "Debug;Release;MinSizeRel;RelWithDebInfo"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +99,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/steph/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/bin/cpack.exe"
+			"value" : "C:/Program Files/CMake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,55 +111,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/steph/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/bin/ctest.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/g++.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER_AR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ar.exe"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER_RANLIB",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
+			"value" : "C:/Program Files/CMake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -191,7 +127,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
@@ -207,7 +143,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-g"
+			"value" : "/MDd /Zi /Ob0 /Od /RTC1"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
@@ -223,7 +159,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-Os -DNDEBUG"
+			"value" : "/MD /O1 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELEASE",
@@ -239,7 +175,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O3 -DNDEBUG"
+			"value" : "/MD /O2 /Ob2 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
@@ -255,7 +191,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O2 -g -DNDEBUG"
+			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_STANDARD_LIBRARIES",
@@ -271,55 +207,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32"
-		},
-		{
-			"name" : "CMAKE_C_COMPILER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc.exe"
-		},
-		{
-			"name" : "CMAKE_C_COMPILER_AR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ar.exe"
-		},
-		{
-			"name" : "CMAKE_C_COMPILER_RANLIB",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/gcc-ranlib.exe"
+			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -335,7 +223,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/DWIN32 /D_WINDOWS /W3"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_DEBUG",
@@ -351,7 +239,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-g"
+			"value" : "/MDd /Zi /Ob0 /Od /RTC1"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_MINSIZEREL",
@@ -367,7 +255,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-Os -DNDEBUG"
+			"value" : "/MD /O1 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_RELEASE",
@@ -383,7 +271,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O3 -DNDEBUG"
+			"value" : "/MD /O2 /Ob2 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_RELWITHDEBINFO",
@@ -399,7 +287,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-O2 -g -DNDEBUG"
+			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_C_STANDARD_LIBRARIES",
@@ -415,35 +303,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32"
-		},
-		{
-			"name" : "CMAKE_DLLTOOL",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/dlltool.exe"
-		},
-		{
-			"name" : "CMAKE_EDIT_COMMAND",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to cache edit program executable."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/Users/steph/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/bin/cmake-gui.exe"
+			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -471,7 +331,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
@@ -487,7 +347,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
@@ -503,7 +363,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
@@ -519,7 +379,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -535,7 +395,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -571,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/OLED_Char_Array_Animations/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/steph/OneDrive/Documents/GitHub/OLED_Char_Array_Animations/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -583,7 +443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Ninja"
+			"value" : "Visual Studio 16 2019"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -595,7 +455,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_PLATFORM",
@@ -607,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "x64"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_TOOLSET",
@@ -619,19 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_GNUtoMS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Convert GNU import libraries to MS format (requires Visual Studio)"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "OFF"
+			"value" : "host=x64"
 		},
 		{
 			"name" : "CMAKE_HOME_DIRECTORY",
@@ -643,7 +491,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/LED_MPU_OLED/src"
+			"value" : "C:/Users/steph/OneDrive/Documents/GitHub/OLED_Char_Array_Animations/src"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -655,7 +503,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Project"
+			"value" : "C:/Program Files/Project"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -671,23 +519,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ld.exe"
-		},
-		{
-			"name" : "CMAKE_MAKE_PROGRAM",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Program used to build from build.ninja files."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/ProgramData/chocolatey/bin/ninja.exe"
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -703,7 +535,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
@@ -719,7 +551,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
@@ -735,7 +567,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
@@ -751,7 +583,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -767,10 +599,10 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
-			"name" : "CMAKE_NM",
+			"name" : "CMAKE_MT",
 			"properties" : 
 			[
 				{
@@ -783,7 +615,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/nm.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mt.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -796,38 +628,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
-		},
-		{
-			"name" : "CMAKE_OBJCOPY",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/objcopy.exe"
-		},
-		{
-			"name" : "CMAKE_OBJDUMP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -882,16 +682,12 @@
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "noop for ranlib"
 				}
 			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/ranlib.exe"
+			"type" : "INTERNAL",
+			"value" : ":"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -907,7 +703,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/windres.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/rc.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -935,7 +731,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "-DWIN32"
 		},
 		{
 			"name" : "CMAKE_RC_FLAGS_DEBUG",
@@ -951,7 +747,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "-D_DEBUG"
 		},
 		{
 			"name" : "CMAKE_RC_FLAGS_MINSIZEREL",
@@ -1002,22 +798,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_READELF",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/readelf.exe"
-		},
-		{
 			"name" : "CMAKE_ROOT",
 			"properties" : 
 			[
@@ -1027,7 +807,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/steph/AppData/Local/Programs/Python/Python311/Lib/site-packages/cmake/data/share/cmake-3.26"
+			"value" : "C:/Program Files/CMake/share/cmake-3.28"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1043,7 +823,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
@@ -1059,7 +839,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
@@ -1075,7 +855,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
@@ -1091,7 +871,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/INCREMENTAL:NO"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
@@ -1107,7 +887,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/debug /INCREMENTAL"
 		},
 		{
 			"name" : "CMAKE_SKIP_INSTALL_RPATH",
@@ -1155,7 +935,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "/machine:x64"
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
@@ -1222,22 +1002,6 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_STRIP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/msys64/ucrt64/bin/strip.exe"
-		},
-		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
 			"properties" : 
 			[
@@ -1263,7 +1027,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/OLED_Char_Array_Animations/build"
+			"value" : "C:/Users/steph/OneDrive/Documents/GitHub/OLED_Char_Array_Animations/build"
 		},
 		{
 			"name" : "Project_IS_TOP_LEVEL",
@@ -1287,19 +1051,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "J:/Computer Scratch Build/Standup_Desk/Arduino-Standup-Desk/Arduino Software/PlatformIO/LED_MPU_OLED/src"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
+			"value" : "C:/Users/steph/OneDrive/Documents/GitHub/OLED_Char_Array_Animations/src"
 		}
 	],
 	"kind" : "cache",
