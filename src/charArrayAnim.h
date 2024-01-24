@@ -3419,7 +3419,8 @@ public:
             u8g2.home();
             u8g2.setCursor(3, oled_LineH * 1 + 2);
             u8g2.print(animation.name);
-
+            u8g2.sendBuffer();
+            
             // Seek to the correct position in the file
             file.seek(count * animation.dataLength);
 
